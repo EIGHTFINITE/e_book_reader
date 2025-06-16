@@ -29,18 +29,18 @@ class TextPaginator {
           )
           .offset;
 
-      // Eğer tüm text sayfaya sığıyorsa
+      // If all the text fits on the page
       if (endIndex >= remainingText.length) {
         pages.add(remainingText.trim());
         break;
       }
 
-      // Kelimeyi ortadan bölmemek için boşluk arıyoruz
+      // We are looking for a space to avoid splitting the word in half
       int lastSpace = remainingText.lastIndexOf(' ', endIndex);
 
-      // Eğer boşluk yoksa, ya çok uzun bir kelime var ya da tek kelime kalmış
+      // If there is no space, either the word is too long or there is only one word left
       if (lastSpace == -1 || lastSpace == 0) {
-        lastSpace = endIndex; // Mecburen tam endIndex kullan
+        lastSpace = endIndex; // Must use full endIndex
       }
 
       pages.add(remainingText.substring(0, lastSpace).trim());
