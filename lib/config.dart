@@ -5,7 +5,7 @@ class ReaderConfig {
   TextAlign textAlign;
   TextStyle textStyle;
   EdgeInsets padding;
-  Color backgroundColor;
+  Color? backgroundColor;
 
   ReaderConfig({
     this.axis = Axis.vertical,
@@ -28,7 +28,9 @@ class ReaderConfig {
         json["padding"]["right"],
         json["padding"]["bottom"],
       ),
-      backgroundColor: Color(json["backgroundColor"]),
+      backgroundColor: json["backgroundColor"] == null
+          ? null
+          : Color(json["backgroundColor"]),
     );
   }
 
@@ -43,7 +45,7 @@ class ReaderConfig {
         "right": padding.right,
         "bottom": padding.bottom,
       },
-      "backgroundColor": backgroundColor.toARGB32(),
+      "backgroundColor": backgroundColor?.toARGB32(),
     };
   }
 
