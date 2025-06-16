@@ -8,7 +8,7 @@ class ReaderConfig {
   Color? backgroundColor;
 
   ReaderConfig({
-    this.axis = Axis.vertical,
+    this.axis = Axis.horizontal,
     this.textAlign = TextAlign.start,
     this.textStyle = const TextStyle(
       color: Colors.black,
