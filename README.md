@@ -85,16 +85,10 @@ void initState() {
 You can customize various aspects of the reader using the ReaderController:
 
 ```dart
-_readerController.setFontSize(18);
-_readerController.setFontWeight(FontWeight.bold);
-_readerController.setFontStyle(FontStyle.italic);
-_readerController.setTextAlign(TextAlign.justify);
-_readerController.setColor(Colors.black, Colors.white);
 _readerController.setAxis(Axis.horizontal);
-_readerController.setLineHeight(1.8);
+_readerController.setTextStyle(TextStyle(color: Colors.black));
+_readerController.setBackgroundColor(Colors.white);
 _readerController.setPadding(EdgeInsets.all(16));
-_readerController.setFontFamily("serif");
-
 ```
 
 ## Pull-to-Refresh
@@ -121,15 +115,11 @@ ReaderPullToRefresh(
 |Method|	Description|
 |--|--|
 |load(String text)|	Loads the e-book text content|
-|setFontSize(int size)	|Sets the font size|
-|setFontWeight(FontWeight weight)|	Sets the font weight
-|setFontStyle(FontStyle style)	|Sets the font style
-|setTextAlign(TextAlign align)	|Sets the text alignment
-|setColor(Color bgColor, Color fgColor)	|Sets the background and foreground colors
 |setAxis(Axis axis)	|Sets the reading direction (vertical/horizontal)
-|setLineHeight(double height)	|Sets the line height
+|setTextAlign(TextAlign align)	|Sets the text alignment
+|setTextStyle(TextStyle style)	|Sets the text style
 |setPadding(EdgeInsets padding)|Sets the padding around the text
-|setFontFamily(String family)|	Sets the font family
+|setBackgroundColor(Color backgroundColor)	|Sets the background color
 |scrollToRate(double rate)|	Scrolls to a specific position based on rate
 |scrollToPosition(double position)|	Scrolls to a specific position|
 |scrollToPage(int page)|	Scrolls to a specific page|

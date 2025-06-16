@@ -70,42 +70,15 @@ class ReaderController extends ValueNotifier<ReaderConfig> {
     return (scrollPosition / (scrollSize)).clamp(0, 1);
   }
 
-  void setFontWeight(FontWeight weight) {
-    updateValue(value.copyWith(
-      fontWeight: weight,
-    ));
-  }
-
   void setTextAlign(TextAlign align) {
     updateValue(value.copyWith(
       textAlign: align,
     ));
   }
 
-  void setFontSize(double size) {
+  void setTextStyle(TextStyle style) {
     updateValue(value.copyWith(
-      fontSize: size,
-    ));
-  }
-
-  void setFontStyle(FontStyle style) {
-    updateValue(value.copyWith(
-      fontStyle: style,
-    ));
-  }
-
-  List<String> get fonts =>
-      ["default", "cursive", "monospace", "serif", "sans-serif"];
-
-  void setFontFamily(String family) {
-    updateValue(value.copyWith(
-      fontFamily: family,
-    ));
-  }
-
-  void setLineHeight(double size) {
-    updateValue(value.copyWith(
-      lineHeight: size,
+      textStyle: style,
     ));
   }
 
@@ -121,11 +94,10 @@ class ReaderController extends ValueNotifier<ReaderConfig> {
     ));
   }
 
-  void setColor(Color backgroundColor, Color foregroundColor) {
+  void setBackgroundColor(Color backgroundColor) {
     updateValue(
       value.copyWith(
         backgroundColor: backgroundColor,
-        foregroundColor: foregroundColor,
       ),
     );
   }
